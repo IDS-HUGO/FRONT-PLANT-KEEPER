@@ -1,0 +1,10 @@
+<div class="plant-detail">
+    <h2>Detalles de la Planta</h2>
+    <div *ngIf="plant">
+      <h3>{{ plant.nombreComun }}</h3>
+      <p><strong>Nombre Científico:</strong> {{ plant.nombreCientifico }}</p>
+      <p><strong>Frecuencia de Riego:</strong> {{ plant.frecuenciaRiego }}</p>
+      <p><strong>Condiciones de Luz:</strong> {{ plant.condicionesLuz }}</p>
+    </div>
+    <button class="btn btn-secondary" routerLink="/plants">Volver</button>
+</div>

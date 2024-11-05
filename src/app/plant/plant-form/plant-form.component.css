@@ -1,0 +1,50 @@
+.plant-form {
+    background-color: #3a5a40;
+    border-radius: 8px;
+    padding: 25px;
+    color: #d9ead3;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #d9ead3;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #a8c686;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    background-color: #a8c686;
+    color: #344e41;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+button {
+    background-color: #a8c686;
+    color: #344e41;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}

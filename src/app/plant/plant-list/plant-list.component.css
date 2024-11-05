@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+    color: #3a5a40;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #344e41;
+    color: #d9ead3;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+li span {
+    font-weight: 500;
+}
+
+button {
+    background-color: #a8c686;
+    color: #344e41;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}

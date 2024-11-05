@@ -1,0 +1,11 @@
+<h1>Lista de Plantas</h1>
+<ul>
+  <li *ngFor="let plant of plants">
+
+    <h3>{{ plant.nombreComun }}</h3>
+    <p><strong>Nombre Científico:</strong> {{ plant.nombreCientifico }}</p>
+    <p><strong>Frecuencia de Riego:</strong> {{ plant.frecuenciaRiego }}</p>
+    <p><strong>Condiciones de Luz:</strong> {{ plant.condicionesLuz }}</p>
+    <button (click)="deletePlant(plant.id)">Eliminar</button>
+  </li>
+</ul>
