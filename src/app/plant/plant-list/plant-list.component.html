@@ -1,11 +1,34 @@
+<!-- Lista de Plantas -->
 <h1>Lista de Plantas</h1>
 <ul>
   <li *ngFor="let plant of plants">
-
     <h3>{{ plant.nombreComun }}</h3>
     <p><strong>Nombre Científico:</strong> {{ plant.nombreCientifico }}</p>
     <p><strong>Frecuencia de Riego:</strong> {{ plant.frecuenciaRiego }}</p>
     <p><strong>Condiciones de Luz:</strong> {{ plant.condicionesLuz }}</p>
+    
+    <!-- Botón Editar -->
+    <button (click)="editPlant(plant)">Editar</button>
     <button (click)="deletePlant(plant.id)">Eliminar</button>
   </li>
 </ul>
+
+<!-- Formulario para Editar Plantas -->
+<div *ngIf="selectedPlant" class="edit-plant-form">
+  <h2>Editar Planta</h2>
+  <form (ngSubmit)="updatePlant()">
+    <label for="nombreComun">Nombre Común</label>
+    <input type="text" id="nombreComun" [(ngModel)]="selectedPlant.nombreComun" name="nombreComun">
+
+    <label for="nombreCientifico">Nombre Científico</label>
+    <input type="text" id="nombreCientifico" [(ngModel)]="selectedPlant.nombreCientifico" name="nombreCientifico">
+
+    <label for="frecuenciaRiego">Frecuencia de Riego</label>
+    <input type="text" id="frecuenciaRiego" [(ngModel)]="selectedPlant.frecuenciaRiego" name="frecuenciaRiego">
+
+    <label for="condicionesLuz">Condiciones de Luz</label>
+    <input type="text" id="condicionesLuz" [(ngModel)]="selectedPlant.condicionesLuz" name="condicionesLuz">
+
+    <button type="submit">Actualizar Planta</button>
+  </form>
+</div>

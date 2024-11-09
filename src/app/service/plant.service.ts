@@ -23,11 +23,13 @@ export class PlantService {
     return this.http.post<Plant>(this.apiUrl, data);
   }
 
-  updatePlant(id: string, data: Plant): Observable<Plant> {
-    return this.http.put<Plant>(`${this.apiUrl}/${id}`, data);
+  updatePlant(id: string, data: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, data);
   }
 
   deletePlant(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
+
+
