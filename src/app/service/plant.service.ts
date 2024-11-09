@@ -31,5 +31,3 @@ export class PlantService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
-
-

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlantService } from '../../service/plant.service';
+import { Plant } from '../interface/plant.interface';
 
 @Component({
   selector: 'app-plant-detail',
@@ -8,26 +9,25 @@ import { PlantService } from '../../service/plant.service';
   styleUrls: ['./plant-detail.component.css']
 })
 export class PlantDetailComponent implements OnInit {
-  plant: any;
+  plant: Plant | null = null;
 
-  constructor(private route: ActivatedRoute, private plantService: PlantService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private plantService: PlantService
+  ) {}
 
-  ngOnInit() {
-    // Obtener el ID de la planta de los parámetros de la ruta
-    const id = this.route.snapshot.paramMap.get('id');
-
-    // Verificar que id no sea null antes de hacer la llamada al servicio
-    if (id) {
-      this.plantService.getPlant(id).subscribe(
-        (data: any) => {
-          this.plant = data;
+  ngOnInit(): void {
+    const plantId = this.route.snapshot.paramMap.get('id');  
+    console.log('ID de la planta:', plantId);  
+    if (plantId) {
+      this.plantService.getPlant(plantId).subscribe(
+        (data: Plant) => {
+          this.plant = data;  
         },
-        error => {
-          console.error('Error al obtener los detalles de la planta', error);
+        (error) => {
+          console.error('Error al cargar los detalles de la planta:', error);
         }
       );
-    } else {
-      console.error('No se proporcionó un ID de planta válido.');
     }
   }
 }

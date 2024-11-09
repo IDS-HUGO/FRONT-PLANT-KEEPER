@@ -9,27 +9,28 @@ import { PlantService } from '../../service/plant.service';
 })
 export class PlantFormComponent {
   plant: Plant = {
-    id: 0, 
+    id: 0,
     nombreComun: '',
     nombreCientifico: '',
     frecuenciaRiego: '',
     condicionesLuz: '',
-    fechaRegistro: new Date() 
+    fechaRegistro: new Date()
   };
-  
+
   isEditing: boolean = false;
 
   @Output() formSubmitted = new EventEmitter<void>();
+  @Output() formCanceled = new EventEmitter<void>();  
 
   constructor(private plantService: PlantService) {}
 
   onSubmit() {
     if (this.isEditing) {
-      // Lógica para actualizar la planta
-      // Ejemplo: this.plantService.updatePlant(this.plant.id, this.plant).subscribe(...);
+      // Actualiza la planta
+      // this.plantService.updatePlant(this.plant.id, this.plant).subscribe(...);
     } else {
       this.plantService.createPlant(this.plant).subscribe(() => {
-        this.formSubmitted.emit(); // Notificar al padre que se ha enviado el formulario
+        this.formSubmitted.emit(); 
         this.resetForm();
       });
     }
@@ -37,17 +38,18 @@ export class PlantFormComponent {
 
   resetForm() {
     this.plant = {
-      id: 0, 
+      id: 0,
       nombreComun: '',
       nombreCientifico: '',
       frecuenciaRiego: '',
       condicionesLuz: '',
-      fechaRegistro: new Date()   
+      fechaRegistro: new Date()
     };
     this.isEditing = false;
   }
 
   cancel() {
     this.resetForm();
+    this.formCanceled.emit();  
   }
 }

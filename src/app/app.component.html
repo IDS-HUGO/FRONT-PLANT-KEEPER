@@ -2,18 +2,18 @@
   <h1>Bienvenido, estás autenticado.</h1>
   <button (click)="onLogout()">Cerrar sesión</button>
 
-  <app-plant-list [plants]="plants"></app-plant-list>
+  <app-plant-list [plants]="plants"></app-plant-list> 
 
-  <app-plant-form *ngIf="isAddingPlant" (formSubmitted)="fetchPlants()"></app-plant-form>
-  
+  <app-plant-form *ngIf="isAddingPlant" (formSubmitted)="fetchPlants()"></app-plant-form> 
   <button (click)="showAddPlantForm()">Agregar Planta</button>
+  
 </div>
 
 <ng-template #loggedOut>
-  <h2>Elige una opción</h2>
+  <h2>BIENVENIDO A PLANT-KEEPER</h2>
   <h1>¿Ya tienes una cuenta? <button (click)="showLogin()">Iniciar sesión</button></h1>
   <h1>¿No tienes cuenta? <button (click)="showRegister()">Regístrate aquí</button></h1>
 
-  <app-login *ngIf="showingLogin" (loginSuccess)="onLoginSuccess()"></app-login>
-  <app-register *ngIf="showingRegister" (registerSuccess)="onRegisterSuccess()"></app-register>
+  <app-login *ngIf="showingLogin" (loginSuccess)="onLoginSuccess()"></app-login> 
+  <app-register *ngIf="showingRegister" (registerSuccess)="onRegisterSuccess()"></app-register> 
 </ng-template>

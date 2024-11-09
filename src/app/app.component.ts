@@ -7,7 +7,7 @@ import { Plant } from './plant/interface/plant.interface'; // Importa la interfa
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls:['./app.component.css']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   isLoggedIn = false;
@@ -16,7 +16,11 @@ export class AppComponent implements OnInit {
   isAddingPlant = false; 
   plants: Plant[] = []; // Cambia any[] a Plant[]
 
-  constructor(private authService: AuthService, private router: Router, private plantService: PlantService) {} // Inyección del servicio
+  constructor(
+    private authService: AuthService, 
+    private router: Router, 
+    private plantService: PlantService
+  ) {} // Inyección del servicio
 
   ngOnInit() {
     this.isLoggedIn = this.authService.isLoggedIn();

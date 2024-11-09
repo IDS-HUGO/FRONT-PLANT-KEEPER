@@ -1,18 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';  
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { PlantModule } from './plant/plant.module';
-import { AppRoutingModule } from './app-routing.module'; 
+import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { PlantService } from './service/plant.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // Elimina PlantListComponent y PlantFormComponent de aquí
   ],
   imports: [
     BrowserModule,
@@ -20,10 +19,11 @@ import { PlantService } from './service/plant.service';
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
-    PlantModule, // Asegúrate de incluir PlantModule aquí
+    PlantModule,
     RouterModule,
   ],
   providers: [PlantService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]  
 })
 export class AppModule { }

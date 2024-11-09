@@ -1,22 +1,20 @@
-<!-- plant-form.component.html -->
 <div class="plant-form">
-    <h2 *ngIf="isEditing">Editar Planta</h2>
-    <h2 *ngIf="!isEditing">Agregar Nueva Planta</h2>
-    <form (ngSubmit)="onSubmit()">
-      <label for="nombreComun">Nombre Común:</label>
-      <input type="text" id="nombreComun" [(ngModel)]="plant.nombreComun" name="nombreComun" required>
-      
-      <label for="nombreCientifico">Nombre Científico:</label>
-      <input type="text" id="nombreCientifico" [(ngModel)]="plant.nombreCientifico" name="nombreCientifico" required>
-  
-      <label for="frecuenciaRiego">Frecuencia de Riego:</label>
-      <input type="text" id="frecuenciaRiego" [(ngModel)]="plant.frecuenciaRiego" name="frecuenciaRiego" required>
-  
-      <label for="condicionesLuz">Condiciones de Luz:</label>
-      <input type="text" id="condicionesLuz" [(ngModel)]="plant.condicionesLuz" name="condicionesLuz" required>
-  
-      <button type="submit">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button>
-      <button type="button" (click)="cancel()">Cancelar</button>
-    </form>
-  </div>
-  
+  <h2 *ngIf="isEditing">Editar Planta</h2>
+  <h2 *ngIf="!isEditing">Agregar Nueva Planta</h2>
+  <form (ngSubmit)="onSubmit()">
+    <label for="nombreComun">Nombre Común:</label>
+    <input type="text" id="nombreComun" [(ngModel)]="plant.nombreComun" name="nombreComun" required>
+    
+    <label for="nombreCientifico">Nombre Científico:</label>
+    <input type="text" id="nombreCientifico" [(ngModel)]="plant.nombreCientifico" name="nombreCientifico" required>
+
+    <label for="frecuenciaRiego">Frecuencia de Riego:</label>
+    <input type="text" id="frecuenciaRiego" [(ngModel)]="plant.frecuenciaRiego" name="frecuenciaRiego" required>
+
+    <label for="condicionesLuz">Condiciones de Luz:</label>
+    <input type="text" id="condicionesLuz" [(ngModel)]="plant.condicionesLuz" name="condicionesLuz" required>
+
+    <button type="submit">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button>
+    <button type="button" (click)="cancel()">Cancelar</button>
+  </form>
+</div>
